@@ -1,0 +1,20 @@
+1. ather IP Address
+2. gathering domains with Certificate parsing (crt.sh)
+3. subdomain enumeration  (knock.py <subdomain enumeration>, subfinder with httpx with tee, assetfinder —subs-only , To find pages site:*.microsoft.com OR site:*.*microsoft.com  inurl:register OR inurl:login)-  at last use waybackurls in allinone.txt
+    1. in subdomains service enumerations
+4. after gathering services then directory bruteforcing (dirsearch <recursion>, dirb, dirbuster)
+5. google dorks (https://dorks.faisalahmed.me/   enter the domain here *.microsoft.com)
+6. To get js file = echo “ssracs.edu.in” | waybackurls | grep -P “.*\.js” | wget  (after that search through js files) grep -RoP “(\/[a-zA-Z0-9_\-]+)+”
+7. spidering the site — OWASP zap
+8. Intel about company hosting
+9. Github Recon (IF Available)
+    1. OSINT - job profiles etc.
+10. After this manual proxy check 
+
+1. Burp extension that paint buch of random headers to check the behaviour
+2. Burp exten - inmap, authorize, scanner++, 
+3. Emass for domain enumeration, dormain, gau
+4. Findout all the endpoints, api endpoints
+5. Fuzzing is very important, fuzz all kinds of characters, every endpoint, it might behave differently, fuzz all the things
+6. find endpoints in js
+7. linkfinder tool for finding endpoints in js files (also gau tool to find endpoints)
