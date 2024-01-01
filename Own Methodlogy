@@ -1,4 +1,4 @@
-1. ather IP Address
+1. Gather IP Address
 2. gathering domains with Certificate parsing (crt.sh)
 3. subdomain enumeration  (knock.py <subdomain enumeration>, subfinder with httpx with tee, assetfinder —subs-only , To find pages site:*.microsoft.com OR site:*.*microsoft.com  inurl:register OR inurl:login)-  at last use waybackurls in allinone.txt
     1. in subdomains service enumerations
@@ -18,3 +18,17 @@
 5. Fuzzing is very important, fuzz all kinds of characters, every endpoint, it might behave differently, fuzz all the things
 6. find endpoints in js
 7. linkfinder tool for finding endpoints in js files (also gau tool to find endpoints)
+_________________________________________________________________________________________________________________________________
+1. Nmap scan the main target (tool - nmap)
+2. Finding Subdomains and making list (tool - [crt.sh](http://crt.sh/),[knock.py](http://knock.py/),subfinder,waybackurls)
+3. filtering out the live domains (tool - nmap)
+4. fuzzing directory endpoints (tool - nmap)
+5. finding fuzzable parameters with paramspider (tool - nmap)
+6. google dorking (tool - nmap)
+
+Exploitation
+
+1. scanning whole live filtered subdomains (nmap)
+2. checking live working directories
+3. fuzzing the sql injection and xss payload or open redirects
+4. auditing and finding endpoints in js files
