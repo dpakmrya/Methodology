@@ -1,0 +1,25 @@
+**site:*.*.xx inurl:bug inurl:bounty site:*.*.xx.xx intext:security report reward site:*.*.xx intext:security report reward**
+
+Step 1 - Gathering as many subdomains as possible
+
+**[Netlas](https://app.netlas.io/ref/b0fde95e/)**, **crt.sh** and **[securitytrails.com](https://securitytrails.com/)**.
+
+Netlas query to find Certificates
+
+`https://app.netlas.io/certs/?q=certificate.subject.organization%3A%22Microsoft%20Corporation%22&page=1`
+
+**SecurityTrails: command to find subdomains**
+
+curl -s --request GET --url https://api.securitytrails.com/v1/domain/target.xx.xx/subdomains?apikey=*****
+
+| jq '.subdomains[]' | sed 's/\"//g' > target.xx.xx.txt 2> /dev/null
+
+&& sed "s/$/.target.xx.xx/" target.xx.xx.txt | sed 's/ //g'
+
+Step 2 - After gathering all the subdomains use HTTPX for live domain list
+
+Step 3 - Use Paramspider to get fuzzable endpoints  (Tool alternative = ARJUN )
+
+To scan with multiple sets of urls with paramspider
+
+cat target.lst | xargs -n 1 -I {} python3 ~/ParamSpider/paramspider.py --domain {} --level high | urldedupe >> all_spiderparamters.txt
