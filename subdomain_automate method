@@ -1,0 +1,11 @@
+subfinder -dL domains.txt -o subfider-subdomains.txt   (does’nt work on wildcard domains)
+
+cat domain_list.txt | assetfinder --subs-only > assetfinder-subdomains.txt
+
+cat subfinder-subdomains.txt assetfinder-subdomains.txt > subdomains.txt
+sort -u subdomains.txt > sort.txt
+
+cat sort.txt | httpx -mc 200 > 200_urls.txt
+
+for URL in $(</root/recon/target/200_urls.txt); do (python3 [paramspider.py](http://paramspider.py/) -d "${URL}");
+done
