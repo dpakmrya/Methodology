@@ -1,0 +1,12 @@
+/.git
+/.gitkeep
+/.git-rewrite
+/.gitreview
+/.git/HEAD
+/.gitconfig
+/.git/index
+/.git/logs
+/.svnignore
+/.gitattributes
+/.gitmodules
+/.svn/entries
